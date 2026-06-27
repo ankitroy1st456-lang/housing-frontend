@@ -77,7 +77,7 @@ function App() {
     try {
       // 1. Check for the Vercel cloud link, or fall back to your local testing port
       const backendUrl =
-        import.meta.env.VITE_BACKEND_URL || "http://localhost:8123";
+        import.meta.env.VITE_BACKEND_URL || "https://localhost:8123";
 
       // 2. Fetch from the dynamic URL and append your endpoint route
       const response = await fetch(`${backendUrl}/api/evaluate`, {
