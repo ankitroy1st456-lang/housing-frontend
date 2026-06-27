@@ -91,9 +91,8 @@ function App() {
       const data = await response.json();
 
       console.log("Response from Node Server: ", data);
-      alert(
-        `Server Connected ! Temporary valuation: $${data.aiData.Predicted_price}`,
-      );
+      alert(`Server Connected! Real Valuation: $${data.aiData.predicted_price.toLocaleString()}`);
+
     } catch (error) {
       console.log("there is some error :", error);
       alert(
