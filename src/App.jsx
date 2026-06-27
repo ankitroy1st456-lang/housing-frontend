@@ -76,8 +76,7 @@ function App() {
     console.log("Collected form data: ", formData);
     try {
       // 1. Check for the Vercel cloud link, or fall back to your local testing port
-      const backendUrl =
-        import.meta.env.VITE_BACKEND_URL || "https://localhost:8123";
+      const backendUrl = "https://housing-backend-3y9s.onrender.com";
 
       // 2. Fetch from the dynamic URL and append your endpoint route
       const response = await fetch(`${backendUrl}/api/evaluate`, {
