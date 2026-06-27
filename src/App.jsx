@@ -75,7 +75,12 @@ function App() {
     e.preventDefault();
     console.log("Collected form data: ", formData);
     try {
-      const response = await fetch("http://localhost:8123/api/evaluate", {
+      // 1. Check for the Vercel cloud link, or fall back to your local testing port
+      const backendUrl =
+        import.meta.env.VITE_BACKEND_URL || "http://localhost:8123";
+
+      // 2. Fetch from the dynamic URL and append your endpoint route
+      const response = await fetch(`${backendUrl}/api/evaluate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
